@@ -54,10 +54,3 @@ def chatglm2_f_infer(args: chatglm2_f, test_dataset):
     output = args.tokenizer.decode(generate_ids[0])
     output = output.split('AI:')[1].replace('</s>','').replace('  ','')
     return output
-
-
-if __name__ == '__main__':
-    ### 导入Dataset
-    test_dataset = make_dataset('test', lambda system, user, assistant:
-                                {'system': system, 'user': user, 'assistant': assistant})
-    outputs = chatglm2_f_infer(chatglm2_f, test_dataset[0])
