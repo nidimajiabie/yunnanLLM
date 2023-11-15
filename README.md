@@ -1,21 +1,23 @@
 一、baichuan7B
 1. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见baichuan_sft.py文件
 2. 推断：微调代码见baichuan_infer.py文件,给出一个示例如下
-# if __name__ == '__main__':
-#     # 测试数据
-#     testdata = {
-#         'instruction': '提取实体和关系',
-#         'input': '道教约在南诏时期传入云南，主要分布在昆明、大理、保山、临沧、昭通、丽江等\n地，为汉、白、彝、纳西、瑶等民族部分群众信仰；1950年前，全省有道观40余座，\n'
-#     }
-#     # 将数据转换为输入的形式
-#     instruction = test_dataset['instruction']
-#     input = test_dataset['input']
-#     test_dataset = {
-#         'system' : input,
-#         'user' : instruction
-#     }
-#     # 推断
-#     baichuan7b_f_infer(baichuan7b_f, test_dataset[0])
+```markdown
+if __name__ == '__main__':
+# 测试数据
+testdata = {
+    'instruction': '提取实体和关系',
+    'input': '道教约在南诏时期传入云南，主要分布在昆明、大理、保山、临沧、昭通、丽江等\n地，为汉、白、彝、纳西、瑶等民族部分群众信仰；1950年前，全省有道观40余座，\n'
+}
+# 将数据转换为输入的形式
+instruction = test_dataset['instruction']
+input = test_dataset['input']
+test_dataset = {
+    'system' : input,
+    'user' : instruction
+}
+# 推断
+baichuan7b_f_infer(baichuan7b_f, test_dataset[0])
+```
 3. 接口
     4.1 激活接口代码见baichuan7b-entrypoint.sh文件
     4.2 调用示例见baichuan7b-f-test.py文件，其中接口地址为http://202.121.140.55:7780/predict
