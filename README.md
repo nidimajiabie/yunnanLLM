@@ -1,7 +1,6 @@
 一、baichuan7B
-1. 运行目录：'/DATA/zqfang/modelscope/modelscope/examples/pytorch/fang'
-2. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见baichuan_sft.py文件
-3. 推断：微调代码见baichuan_infer.py文件,给出一个示例如下
+1. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见baichuan_sft.py文件
+2. 推断：微调代码见baichuan_infer.py文件,给出一个示例如下
 # if __name__ == '__main__':
 #     # 测试数据
 #     testdata = {
@@ -17,7 +16,7 @@
 #     }
 #     # 推断
 #     baichuan7b_f_infer(baichuan7b_f, test_dataset[0])
-4. 接口
+3. 接口
     4.1 激活接口代码见baichuan7b-entrypoint.sh文件
     4.2 调用示例见baichuan7b-f-test.py文件，其中接口地址为http://202.121.140.55:7780/predict
     给出一个示例如下
@@ -33,9 +32,8 @@
 #                      timeout=300).json())
 
 二、chatglm2-6B
-1. 运行目录：'/DATA/zqfang/modelscope/modelscope/examples/pytorch/fang'
-2. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见chatglm2_sft.py文件
-3. 推断：微调代码见chatglm2_infer.py文件,给出一个示例如下
+1. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见chatglm2_sft.py文件
+2. 推断：微调代码见chatglm2_infer.py文件,给出一个示例如下
 # if __name__ == '__main__':
 #     # 测试数据
 #     testdata = {
@@ -51,7 +49,7 @@
 #     }
 #     # 推断
 #     chatglm2_f_infer(chatglm2_f, test_dataset[0])
-4. 接口
+3. 接口
     4.1 激活接口代码见chatglm2-entrypoint.sh文件
     4.2 调用示例见chatgm2-f-test.py文件，其中接口地址为http://202.121.140.55:7790/predict
     给出一个示例如下
@@ -67,9 +65,8 @@
 #                      timeout=300).json())
 
 三、Qwen-7B-chat
-1. 运行目录：'/DATA/zqfang/modelscope2/examples/pytorch/llm/src'
-2. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见qwen_sft.py文件
-3. 推断：微调代码见qwen_infer.py文件,给出一个示例如下
+1. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见qwen_sft.py文件
+2. 推断：微调代码见qwen_infer.py文件,给出一个示例如下
 # if __name__ == '__main__':
 #     # 加载模型
 #     args, remaining_argv = parse_args(qwen_7b_chat_f)
@@ -91,7 +88,7 @@
 #     }
 #     # 推断
 #     qwen_7b_chat_f_infer(args, test_dataset)
-4. 接口
+3. 接口
     4.1 激活接口代码见qwen-f-entrypoint.sh文件
     4.2 调用示例见qwen-f-test.py文件，其中接口地址为http://202.121.140.55:7800/predict
     给出一个示例如下
