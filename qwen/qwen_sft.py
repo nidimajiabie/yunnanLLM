@@ -321,13 +321,3 @@ def llm_sft(args: SftArguments) -> None:
         if args.push_to_hub:
             trainer._add_patterns_to_gitignores(['images/'])
             trainer.push_to_hub()
-
-
-if __name__ == '__main__':
-    args, remaining_argv = parse_args(SftArguments)
-    if len(remaining_argv) > 0:
-        if args.ignore_args_error:
-            logger.warning(f'remaining_argv: {remaining_argv}')
-        else:
-            raise ValueError(f'remaining_argv: {remaining_argv}')
-    llm_sft(args)
