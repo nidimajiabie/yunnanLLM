@@ -1,4 +1,5 @@
 国内中文开源大语言模型的微调和推理——baichuan7B, chatglm2-6B, Qwen-7B-chat
+
 一、baichuan7B
 1. 微调：基于nation-gpt-ie.json文件进行微调，微调代码见baichuan_sft.py文件
 2. 推断：微调代码见baichuan_infer.py文件,给出一个示例如下
