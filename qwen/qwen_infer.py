@@ -110,25 +110,3 @@ def qwen_7b_chat_f_infer(args: qwen_7b_chat_f, test_dataset) -> None:
                     args.skip_prompt)
         output = output.split('assistant\n')[1].replace('<|im_end|><|endoftext|>','')
     return output
-
-
-
-if __name__ == '__main__':
-    args, remaining_argv = parse_args(qwen_7b_chat_f)
-    if len(remaining_argv) > 0:
-        if args.ignore_args_error:
-            logger.warning(f'remaining_argv: {remaining_argv}')
-        else:
-            raise ValueError(f'remaining_argv: {remaining_argv}')
-    test_dataset = MsDataset.load('nation-gpt-ie-test.json')
-    test_dataset = test_dataset[0]
-    testdata = {
-        'instruction': '提取实体和关系',
-        'input': '道教约在南诏时期传入云南，主要分布在昆明、大理、保山、临沧、昭通、丽江等\n地，为汉、白、彝、纳西、瑶等民族部分群众信仰；1950年前，全省有道观40余座，\n'
-    }
-    instruction = test_dataset['instruction']
-    input = test_dataset['input']
-    test_dataset = {
-        'query': f'{instruction}\n{input}'
-    }
-    qwen_7b_chat_f_infer(args, test_dataset)
